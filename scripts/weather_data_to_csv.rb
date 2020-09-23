@@ -1,14 +1,12 @@
 require "json"
 require "date"
+require "time"
 require "csv"
 
-JSON_FILE = "/Users/doro/HAWCloud/Masterarbeit/data/weather.json"
+JSON_FILE = "/Users/doro/HAWCloud/Masterarbeit/data/dark_sky_api/weather.json"
 CSV_FILE = "/Users/doro/HAWCloud/Masterarbeit/data/weather.csv"
 HEADERS = [
-  "year",
-  "month",
-  "day",
-  "hour",
+  "datetime",
   "precip_intensity",
   "precip_probability",
   "precip_type",
@@ -32,18 +30,12 @@ CSV.open(CSV_FILE, "wb") do |csv|
   csv << HEADERS
   hash.each_pair do |date, daily_data|
     date = DateTime.parse(date)
-    year = date.year
-    month = date.month
-    day = date.day
 
     daily_data["hourly"]["data"].each do |hourly_data|
-      hour = Time.at(hourly_data["time"]).hour
+      time_at = Time.at(hourly_data["time"])
 
       csv << [
-        year,
-        month,
-        day,
-        hour,
+        time_at.iso8601,
         hourly_data["precipIntensity"],
         hourly_data["precipProbability"],
         hourly_data["precipType"],
