@@ -35,7 +35,7 @@ CSV.open(CSV_FILE, "wb") do |csv|
       time_at = Time.at(hourly_data["time"])
 
       csv << [
-        time_at.iso8601,
+        time_at.strftime("%Y-%m-%d %H:%M:%S"),
         hourly_data["precipIntensity"],
         hourly_data["precipProbability"],
         hourly_data["precipType"],

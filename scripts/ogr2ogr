@@ -1,0 +1,4 @@
+ogr2ogr -s_srs EPSG:25832 \
+-t_srs EPSG:4326 \
+-f "GeoJSON" \
+stations.geojson stations.gml
