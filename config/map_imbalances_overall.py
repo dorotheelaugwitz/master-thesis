@@ -5,15 +5,15 @@
       "filters": [],
       "layers": [
         {
-          "id": "xuhfn9",
-          "type": "line",
+          "id": "fx0lhvp",
+          "type": "arc",
           "config": {
-            "dataId": "data",
-            "label": "new layer",
+            "dataId": "imbalances",
+            "label": "imbalances",
             "color": [
-              255,
-              248,
-              51
+              106,
+              187,
+              107
             ],
             "columns": {
               "lat0": "latitude_x",
@@ -23,8 +23,8 @@
             },
             "isVisible": True,
             "visConfig": {
-              "opacity": 0.8,
-              "thickness": 2,
+              "opacity": 0.4,
+              "thickness": 1,
               "colorRange": {
                 "name": "Global Warming",
                 "type": "sequential",
@@ -78,42 +78,41 @@
           }
         },
         {
-          "id": "pxy0hq9",
+          "id": "sfd5djh",
           "type": "point",
           "config": {
-            "dataId": "data",
-            "label": "new layer",
+            "dataId": "stations",
+            "label": "stations",
             "color": [
-              30,
-              150,
-              190
+              34,
+              63,
+              154
             ],
             "columns": {
-              "lat": "latitude_x",
-              "lng": "longitude_x",
+              "lat": "latitude",
+              "lng": "longitude",
               "altitude": None
             },
-            "isVisible": False,
+            "isVisible": True,
             "visConfig": {
-              "radius": 10,
+              "radius": 6,
               "fixedRadius": False,
-              "opacity": 1,
+              "opacity": 0.25,
               "outline": False,
               "thickness": 2,
               "strokeColor": None,
               "colorRange": {
-                "name": "Uber Viz Sequential 4",
+                "name": "Global Warming",
                 "type": "sequential",
                 "category": "Uber",
                 "colors": [
-                  "#E6FAFA",
-                  "#C1E5E6",
-                  "#9DD0D4",
-                  "#75BBC1",
-                  "#4BA7AF",
-                  "#00939C"
-                ],
-                "reversed": False
+                  "#5A1846",
+                  "#900C3F",
+                  "#C70039",
+                  "#E3611C",
+                  "#F1920E",
+                  "#FFC300"
+                ]
               },
               "strokeColorRange": {
                 "name": "Global Warming",
@@ -154,25 +153,19 @@
             ]
           },
           "visualChannels": {
-            "colorField": {
-              "name": "diff",
-              "type": "integer"
-            },
+            "colorField": None,
             "colorScale": "quantile",
             "strokeColorField": None,
             "strokeColorScale": "quantile",
-            "sizeField": {
-              "name": "diff",
-              "type": "integer"
-            },
-            "sizeScale": "sqrt"
+            "sizeField": None,
+            "sizeScale": "linear"
           }
         }
       ],
       "interactionConfig": {
         "tooltip": {
           "fieldsToShow": {
-            "data": [
+            "imbalances": [
               {
                 "name": "station_x",
                 "format": None
@@ -191,6 +184,16 @@
               },
               {
                 "name": "diff",
+                "format": None
+              }
+            ],
+            "stations": [
+              {
+                "name": "station_id",
+                "format": None
+              },
+              {
+                "name": "name",
                 "format": None
               }
             ]
@@ -220,14 +223,14 @@
     "mapState": {
       "bearing": 0,
       "dragRotate": False,
-      "latitude": 53.55972266426729,
-      "longitude": 9.994493023861432,
+      "latitude": 53.55439858166911,
+      "longitude": 9.993169777419851,
       "pitch": 0,
-      "zoom": 11.56938284358558,
+      "zoom": 11.032892753610183,
       "isSplit": False
     },
     "mapStyle": {
-      "styleType": "dark",
+      "styleType": "light",
       "topLayerGroups": {},
       "visibleLayerGroups": {
         "label": True,
@@ -239,9 +242,9 @@
         "3d building": False
       },
       "threeDBuildingColor": [
-        9.665468314072013,
-        17.18305478057247,
-        31.1442867897876
+        218.82023004728686,
+        223.47597962276103,
+        223.47597962276103
       ],
       "mapStyles": {}
     }

@@ -5,15 +5,15 @@
       "filters": [],
       "layers": [
         {
-          "id": "mz5vtjc",
+          "id": "rf7j5ch",
           "type": "point",
           "config": {
-            "dataId": "stations",
-            "label": "Stations",
+            "dataId": "negative",
+            "label": "negative",
             "color": [
-              25,
-              20,
-              16
+              119,
+              110,
+              87
             ],
             "columns": {
               "lat": "latitude",
@@ -22,13 +22,34 @@
             },
             "isVisible": True,
             "visConfig": {
-              "radius": 7,
+              "radius": 15,
               "fixedRadius": False,
-              "opacity": 0.8,
-              "outline": False,
+              "opacity": 0.7,
+              "outline": True,
               "thickness": 2,
-              "strokeColor": None,
+              "strokeColor": [
+                25,
+                20,
+                16
+              ],
               "colorRange": {
+                "name": "ColorBrewer Reds-9",
+                "type": "singlehue",
+                "category": "ColorBrewer",
+                "colors": [
+                  "#67000d",
+                  "#a50f15",
+                  "#cb181d",
+                  "#ef3b2c",
+                  "#fb6a4a",
+                  "#fc9272",
+                  "#fcbba1",
+                  "#fee0d2",
+                  "#fff5f0"
+                ],
+                "reversed": True
+              },
+              "strokeColorRange": {
                 "name": "Global Warming",
                 "type": "sequential",
                 "category": "Uber",
@@ -39,6 +60,87 @@
                   "#E3611C",
                   "#F1920E",
                   "#FFC300"
+                ]
+              },
+              "radiusRange": [
+                0,
+                50
+              ],
+              "filled": True
+            },
+            "hidden": False,
+            "textLabel": [
+              {
+                "field": None,
+                "color": [
+                  255,
+                  255,
+                  255
+                ],
+                "size": 18,
+                "offset": [
+                  0,
+                  0
+                ],
+                "anchor": "start",
+                "alignment": "center"
+              }
+            ]
+          },
+          "visualChannels": {
+            "colorField": {
+              "name": "check_outs",
+              "type": "integer"
+            },
+            "colorScale": "quantile",
+            "strokeColorField": None,
+            "strokeColorScale": "quantile",
+            "sizeField": None,
+            "sizeScale": "linear"
+          }
+        },
+        {
+          "id": "yt1is8n",
+          "type": "point",
+          "config": {
+            "dataId": "positive",
+            "label": "positive",
+            "color": [
+              77,
+              193,
+              156
+            ],
+            "columns": {
+              "lat": "latitude",
+              "lng": "longitude",
+              "altitude": None
+            },
+            "isVisible": True,
+            "visConfig": {
+              "radius": 15,
+              "fixedRadius": False,
+              "opacity": 0.7,
+              "outline": True,
+              "thickness": 2,
+              "strokeColor": [
+                25,
+                20,
+                16
+              ],
+              "colorRange": {
+                "name": "ColorBrewer YlGn-9",
+                "type": "sequential",
+                "category": "ColorBrewer",
+                "colors": [
+                  "#ffffe5",
+                  "#f7fcb9",
+                  "#d9f0a3",
+                  "#addd8e",
+                  "#78c679",
+                  "#41ab5d",
+                  "#238443",
+                  "#006837",
+                  "#004529"
                 ]
               },
               "strokeColorRange": {
@@ -80,80 +182,14 @@
             ]
           },
           "visualChannels": {
-            "colorField": None,
+            "colorField": {
+              "name": "check_ins",
+              "type": "integer"
+            },
             "colorScale": "quantile",
             "strokeColorField": None,
             "strokeColorScale": "quantile",
             "sizeField": None,
-            "sizeScale": "linear"
-          }
-        },
-        {
-          "id": "o9o5xrq",
-          "type": "arc",
-          "config": {
-            "dataId": "data",
-            "label": "Routes",
-            "color": [
-              59,
-              133,
-              204
-            ],
-            "columns": {
-              "lat0": "latitude_x",
-              "lng0": "longitude_x",
-              "lat1": "latitude_y",
-              "lng1": "longitude_y"
-            },
-            "isVisible": True,
-            "visConfig": {
-              "opacity": 0.8,
-              "thickness": 2,
-              "colorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "sizeRange": [
-                0,
-                10
-              ],
-              "targetColor": None
-            },
-            "hidden": False,
-            "textLabel": [
-              {
-                "field": None,
-                "color": [
-                  255,
-                  255,
-                  255
-                ],
-                "size": 18,
-                "offset": [
-                  0,
-                  0
-                ],
-                "anchor": "start",
-                "alignment": "center"
-              }
-            ]
-          },
-          "visualChannels": {
-            "colorField": None,
-            "colorScale": "quantile",
-            "sizeField": {
-              "name": "count",
-              "type": "integer"
-            },
             "sizeScale": "linear"
           }
         }
@@ -161,27 +197,47 @@
       "interactionConfig": {
         "tooltip": {
           "fieldsToShow": {
-            "data": [
-              {
-                "name": "station_x",
-                "format": None
-              },
-              {
-                "name": "station_y",
-                "format": None
-              },
-              {
-                "name": "count",
-                "format": None
-              }
-            ],
-            "stations": [
+            "positive": [
               {
                 "name": "station_id",
                 "format": None
               },
               {
                 "name": "name",
+                "format": None
+              },
+              {
+                "name": "check_outs",
+                "format": None
+              },
+              {
+                "name": "check_ins",
+                "format": None
+              },
+              {
+                "name": "diff",
+                "format": None
+              }
+            ],
+            "negative": [
+              {
+                "name": "station_id",
+                "format": None
+              },
+              {
+                "name": "name",
+                "format": None
+              },
+              {
+                "name": "check_outs",
+                "format": None
+              },
+              {
+                "name": "check_ins",
+                "format": None
+              },
+              {
+                "name": "diff",
                 "format": None
               }
             ]
@@ -211,14 +267,14 @@
     "mapState": {
       "bearing": 0,
       "dragRotate": False,
-      "latitude": 53.53367132327897,
-      "longitude": 9.95383467310889,
+      "latitude": 53.5307819179127,
+      "longitude": 9.994552194624756,
       "pitch": 0,
-      "zoom": 10.706122812119,
+      "zoom": 10.684632274109424,
       "isSplit": False
     },
     "mapStyle": {
-      "styleType": "muted",
+      "styleType": "light",
       "topLayerGroups": {},
       "visibleLayerGroups": {
         "label": False,
@@ -230,9 +286,9 @@
         "3d building": False
       },
       "threeDBuildingColor": [
-        224.4071295378559,
-        224.4071295378559,
-        224.4071295378559
+        218.82023004728686,
+        223.47597962276103,
+        223.47597962276103
       ],
       "mapStyles": {}
     }
