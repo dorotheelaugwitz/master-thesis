@@ -13,8 +13,8 @@
           ],
           "type": "range",
           "value": [
-            5.24,
-            12.07
+            7.32,
+            9.86
           ],
           "enlarged": False,
           "plotType": "histogram",
@@ -38,7 +38,7 @@
               "lat": "latitude",
               "lng": "longitude"
             },
-            "isVisible": False,
+            "isVisible": True,
             "visConfig": {
               "opacity": 1,
               "colorRange": {
@@ -98,7 +98,7 @@
               "lat": "latitude",
               "lng": "longitude"
             },
-            "isVisible": True,
+            "isVisible": False,
             "visConfig": {
               "opacity": 1,
               "colorRange": {
@@ -202,7 +202,7 @@
       "isSplit": False
     },
     "mapStyle": {
-      "styleType": "dark",
+      "styleType": "light",
       "topLayerGroups": {},
       "visibleLayerGroups": {
         "label": True,

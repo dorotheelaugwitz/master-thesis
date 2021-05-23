@@ -2,30 +2,11 @@
   "version": "v1",
   "config": {
     "visState": {
-      "filters": [
-        {
-          "dataId": [
-            "hourly_imbalances"
-          ],
-          "id": "2qc60eig9",
-          "name": [
-            "date_from"
-          ],
-          "type": "range",
-          "value": [
-            0,
-            3.19
-          ],
-          "enlarged": False,
-          "plotType": "histogram",
-          "animationWindow": "free",
-          "yAxis": None
-        }
-      ],
+      "filters": [],
       "layers": [
         {
-          "id": "ehygvp",
-          "type": "arc",
+          "id": "9mn0ofu",
+          "type": "line",
           "config": {
             "dataId": "hourly_imbalances",
             "label": "imbalances",
@@ -62,9 +43,9 @@
                 10
               ],
               "targetColor": [
-                134,
-                10,
-                90
+                210,
+                0,
+                0
               ]
             },
             "hidden": False,
@@ -152,10 +133,10 @@
     "mapState": {
       "bearing": 0,
       "dragRotate": False,
-      "latitude": 53.561078796386305,
-      "longitude": 9.988441894733983,
+      "latitude": 53.56556433817534,
+      "longitude": 9.997665903045851,
       "pitch": 0,
-      "zoom": 11.114535195284688,
+      "zoom": 11.580794006234738,
       "isSplit": False
     },
     "mapStyle": {
