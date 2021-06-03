@@ -1,8 +1,8 @@
 require "json"
 require "csv"
 
-JSON_FILE = "/Users/doro/HAWCloud/Masterarbeit/data/hamburg/stations.geojson"
-CSV_FILE = "/Users/doro/HAWCloud/Masterarbeit/data/hamburg/stations.csv"
+JSON_FILE = "./data/hamburg/stations.geojson"
+CSV_FILE = "./data/hamburg/stations.csv"
 
 HEADERS = [
   "name",

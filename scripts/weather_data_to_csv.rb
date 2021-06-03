@@ -3,8 +3,8 @@ require "date"
 require "time"
 require "csv"
 
-JSON_FILE = "/Users/doro/HAWCloud/Masterarbeit/data/dark_sky_api/weather.json"
-CSV_FILE = "/Users/doro/HAWCloud/Masterarbeit/data/dark_sky_api/weather.csv"
+JSON_FILE = "./data/dark_sky_api/weather.json"
+CSV_FILE = "./data/dark_sky_api/weather.csv"
 HEADERS = [
   "datetime",
   "precip_intensity",
